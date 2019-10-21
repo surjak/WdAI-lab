@@ -264,3 +264,58 @@ hr.style-seven:before {
   border-radius: 20px;
 }
 /* hr */
+
+@media (max-width: 600px) {
+  header {
+    height: 60vh;
+  }
+  .nav {
+    display: block;
+  }
+  .nav-menu {
+    padding-top: 4%;
+    text-align: center;
+    display: block;
+  }
+  .nav-menu ul li a {
+    font-size: 23px;
+  }
+  .nav-menu button {
+    display: none;
+  }
+  .header-content {
+    padding-top: 20%;
+  }
+
+  .about-me {
+    display: block;
+  }
+  .info {
+    text-align: center;
+    width: 100%;
+    padding: 0;
+  }
+  .about-me img {
+    width: 100%;
+    padding-top: 15%;
+  }
+  .recipes {
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+  }
+  .grid-item {
+    margin-top: 5%;
+  }
+  footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .medias {
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+  .contact,
+  .about {
+    margin-top: 5%;
+  }
+}
