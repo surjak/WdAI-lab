@@ -119,7 +119,9 @@ main {
   padding-top: 10%;
   padding-bottom: 10%;
 }
-
+.hidden-menu {
+  display: none;
+}
 .about-me {
   display: flex;
   width: 100%;
@@ -265,6 +267,15 @@ hr.style-seven:before {
 }
 /* hr */
 
+@media (max-width: 1300px) {
+  .header-content h3 {
+    padding: 4% 0 2% 0;
+  }
+  .header-content p {
+    padding-bottom: 4%;
+  }
+}
+
 @media (max-width: 600px) {
   header {
     height: 60vh;
@@ -272,10 +283,32 @@ hr.style-seven:before {
   .nav {
     display: block;
   }
+  main {
+    padding-top: 6%;
+  }
   .nav-menu {
-    padding-top: 4%;
     text-align: center;
     display: block;
+  }
+  .nav-menu ul {
+    display: none;
+  }
+  .hidden-menu {
+    display: block;
+    width: 90%;
+    margin: auto;
+    padding: 0 0 6% 0;
+  }
+  .hidden-menu ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+
+  .hidden-menu ul li a {
+    color: black;
+    text-decoration: none;
   }
   .nav-menu ul li a {
     font-size: 23px;
