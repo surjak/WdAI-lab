@@ -274,6 +274,117 @@ hr.style-seven:before {
   .header-content p {
     padding-bottom: 4%;
   }
+  .recipes {
+    grid-gap: 5%;
+  }
+}
+
+@media (max-width: 1150px) {
+  .about-me {
+    display: block;
+    text-align: center;
+  }
+  .info {
+    text-align: center;
+    width: 100%;
+    padding: 0;
+  }
+  .about-me img {
+    width: 50%;
+    padding-top: 10%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .recipes {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 3%;
+    grid-row-gap: 1%;
+  }
+  .grid-item {
+    margin-top: 0;
+  }
+}
+@media (max-width: 950px) {
+  .hidden-menu {
+    display: block;
+    width: 90%;
+    margin: auto;
+    padding: 0 0 6% 0;
+  }
+  .hidden-menu ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+
+  .hidden-menu ul li a {
+    color: black;
+    text-decoration: none;
+  }
+  .nav-menu {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  header {
+    height: 60vh;
+  }
+  .nav {
+    display: block;
+  }
+  main {
+    padding-top: 6%;
+  }
+  .nav-menu {
+    display: none;
+  }
+
+  .hidden-menu {
+    display: block;
+    width: 90%;
+    margin: auto;
+    padding: 0 0 6% 0;
+  }
+  .hidden-menu ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+
+  .hidden-menu ul li a {
+    color: black;
+    text-decoration: none;
+  }
+  .nav-menu ul li a {
+    font-size: 23px;
+  }
+
+  .header-content {
+    padding-top: 10%;
+  }
+
+  .about-me {
+    display: block;
+  }
+  .info {
+    text-align: center;
+    width: 100%;
+    padding: 0;
+  }
+  .about-me img {
+    width: 100%;
+    padding-top: 15%;
+  }
+  .recipes {
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+  }
+  .grid-item {
+    margin-top: 5%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -317,7 +428,7 @@ hr.style-seven:before {
     display: none;
   }
   .header-content {
-    padding-top: 20%;
+    padding-top: 15%;
   }
 
   .about-me {
@@ -350,5 +461,14 @@ hr.style-seven:before {
   .contact,
   .about {
     margin-top: 5%;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    height: 65vh;
+  }
+  .header-content {
+    padding-top: 5%;
   }
 }
