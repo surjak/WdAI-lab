@@ -1,0 +1,46 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+nav {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: white;
+}
+.navbar-brand {
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+.nav-img {
+  width: 60px;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+.fixed-top.scrolled {
+  background-color: rgb(194, 202, 201) !important;
+  transition: background-color 200ms linear;
+}
+.jumbotron {
+  /* background: url("./images/chef-bg.jpg") center center / cover no-repeat; */
+  background: url("./images/alexandre-debieve-FO7JIlwjOtU-unsplash.jpg");
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.637);
+  background-position: center;
+  background-blend-mode: luminosity;
+}
+.jumbotron .container h1 {
+  color: white;
+  text-shadow: 3px 4px 22px rgba(222, 228, 228, 0.671);
+  font-weight: 300;
+}
+.jumbotron .container p {
+  color: white;
+  font-size: 1.3rem;
+  text-shadow: 3px 4px 22px rgba(222, 228, 228, 0.767);
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  .bg-dark {
+    background-color: transparent !important;
+  }
+}
