@@ -10,9 +10,7 @@ nav {
   font-weight: 400;
   font-size: 1.6rem;
 }
-.nav-img {
-  width: 60px;
-}
+
 .navbar-dark .navbar-nav .nav-link {
   color: white;
 }
@@ -39,15 +37,13 @@ nav {
   text-shadow: 3px 4px 22px rgba(222, 228, 228, 0.767);
   font-weight: 400;
 }
-.container .weDo h1 {
-  font-size: 3rem !important;
-  font-weight: 700;
-}
+
 .my-btn {
   font-size: 1.7rem !important;
   font-weight: 700;
 }
-.techno {
+.techno,
+.intern {
   background: #fafafa;
 }
 .techno-h1 {
