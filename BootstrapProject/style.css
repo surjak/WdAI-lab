@@ -48,16 +48,37 @@ nav {
 }
 .techno-h1 {
   border-bottom: 2px solid rgb(114, 172, 145);
-  width: 35%;
-  margin: auto;
+
   padding-bottom: 4px;
 }
 .fab {
   font-size: 13rem;
 }
+.navbar-dark .navbar-nav .active > .nav-link {
+  color: rgb(114, 172, 145);
+}
 
 @media (min-width: 768px) {
   .bg-dark {
     background-color: transparent !important;
+  }
+  .techno-h1 {
+    width: 50%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #text-header {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #text-header {
+    font-size: 1rem;
+  }
+  .fab {
+    font-size: 8rem;
   }
 }
