@@ -161,10 +161,12 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
-  grid-gap: 10%;
+  height: auto;
+  column-gap: 10%;
 }
 
 .grid-item {
+  margin-top: 10%;
   height: 60vh;
   display: grid;
   grid-template-rows: 30vh 30vh;
@@ -194,7 +196,7 @@ main {
 .readmore {
   position: absolute;
 
-  height: 100%;
+  height: 50%;
   width: 100%;
   background: rgba(255, 255, 255, 0.432);
   display: none;
@@ -211,7 +213,20 @@ main {
 .grid-item:hover .readmore {
   display: block;
 }
-
+.btn-remove {
+  border: none;
+  background: transparent;
+  padding: 5px 15px;
+  font-size: 22px;
+  font-weight: 700;
+  border-radius: 3px;
+  cursor: pointer;
+  position: absolute;
+  color: white;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
 footer {
   display: flex;
   justify-content: space-between;
@@ -275,7 +290,7 @@ hr.style-seven:before {
     padding-bottom: 4%;
   }
   .recipes {
-    grid-gap: 5%;
+    column-gap: 5%;
   }
 }
 
@@ -298,11 +313,10 @@ hr.style-seven:before {
 @media (max-width: 1000px) {
   .recipes {
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 3%;
-    grid-row-gap: 1%;
+    column-gap: 3%;
   }
   .grid-item {
-    margin-top: 0;
+    margin-top: 5%;
   }
 }
 @media (max-width: 950px) {
