@@ -24,9 +24,6 @@
             <li><a href="#przepisy">Przepisy</a></li>
             <li><a href="#info">Informacje</a></li>
           </ul>
-          <button id="addRecipe">
-            Dodaj przepis
-          </button>
         </div>
       </nav>
       <div class="header-content">
@@ -38,6 +35,10 @@
         </p>
         <button>Przejdz do przepisów</button>
       </div>
+      <button id="addRecipe">
+        Dodaj <br />
+        przepis
+      </button>
     </header>
     <main>
       <div class="hidden-menu">
@@ -192,6 +193,28 @@
         </div>
       </footer>
     </div>
+    <div class="formularz">
+      <div class="form-page">
+        <h1>Dodaj przepis</h1>
+        <form action="post">
+          <input type="text" placeholder="Nazwa przepisu" />
+          <input type="text" placeholder="Nazwa przepisu" />
+          <input type="text" placeholder="Nazwa przepisu" />
+          <textarea name="" id="" cols="10" rows="4"></textarea>
+          <button type="submit">ADD RECIPE</button>
+        </form>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+      integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+      integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk="
+      crossorigin="anonymous"
+    ></script>
     <script src="app.js"></script>
   </body>
 </html>

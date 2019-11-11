@@ -31,8 +31,14 @@ function addRecipe() {
   recipes.appendChild(recipe);
 }
 
+const formularz = document.querySelector(".formularz");
+const tl = new TimelineMax({ paused: true, reversed: true });
+
+tl.fromTo(formularz, 0.5, { x: "100%" }, { opacity: 1, x: "0%" }, "-=0.1");
+
 btn.addEventListener("click", () => {
-  addRecipe();
+  // addRecipe();
+  tl.reversed() ? tl.play() : tl.reverse();
 });
 
 listofRecipes.forEach(recipe => {
@@ -40,3 +46,20 @@ listofRecipes.forEach(recipe => {
     recipes.removeChild(recipe);
   });
 });
+
+// const addRecipe = document.querySelector("#addRecipe");
+
+// .fromTo(contact, 0.5, { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.1")
+// .fromTo(social, 0.5, { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.5")
+// .fromTo(logo, 0.2, { color: "white" }, { color: "black" }, "-=1")
+// .fromTo(
+//   hamburgerLines,
+//   0.2,
+//   { stroke: "white" },
+//   { stroke: "black" },
+//   "-=1"
+// );
+
+// addRecipe.addEventListener("click", () => {
+//   tl.reversed() ? tl.play() : tl.reverse();
+// });
