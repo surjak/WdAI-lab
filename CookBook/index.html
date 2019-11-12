@@ -196,22 +196,43 @@
     <div class="formularz">
       <div class="form-page">
         <h1>Dodaj przepis</h1>
-        <form action="post">
-          <input type="text" placeholder="Nazwa przepisu" id="nazwa" />
+        <form action="post" id="form">
+          <input
+            type="text"
+            placeholder="Nazwa przepisu"
+            id="nazwa"
+            required
+            minlength="2"
+            maxlength="25"
+          />
+          <p id="error-nazwa"></p>
           <input
             type="text"
             placeholder="Składniki (proszę oddzielić przecinkiem kolejne składniki)"
             id="skladniki"
+            minlength="3"
+            maxlength="60"
+            required
           />
-          <input type="text" placeholder="Image URL" id="url" />
+
+          <p id="error-skladniki"></p>
+          <input type="url" placeholder="Image URL" id="url" required />
+          <p id="error-url"></p>
+
           <textarea
             name=""
             cols="10"
             rows="4"
             placeholder="Opis przepisu"
             id="opis"
+            required
+            minlength="10"
+            maxlength="200"
           ></textarea>
+          <p id="error-opis"></p>
+
           <button type="submit" id="submitBtn">ADD RECIPE</button>
+          <button type="button" id="clearBTN">CLEAR</button>
         </form>
       </div>
     </div>

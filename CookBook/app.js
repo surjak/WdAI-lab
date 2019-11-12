@@ -51,10 +51,22 @@ const submitBtn = document
   .querySelector("#submitBtn")
   .addEventListener("click", e => {
     e.preventDefault();
+    const form = document.getElementById("form");
+    const isValidForm = form.checkValidity();
+
     const opis = document.querySelector("#opis");
+
     const skladniki = document.querySelector("#skladniki");
     const url = document.querySelector("#url");
     const nazwa = document.querySelector("#nazwa");
+    document.querySelector("#error-nazwa").innerHTML = nazwa.validationMessage;
+    document.querySelector("#error-opis").innerHTML = opis.validationMessage;
+    document.querySelector("#error-skladniki").innerHTML =
+      skladniki.validationMessage;
+    document.querySelector("#error-url").innerHTML = url.validationMessage;
+
+    if (!isValidForm) return;
+
     addRecipe(nazwa.value, opis.value, skladniki.value, url.value);
 
     tl.reversed() ? tl.play() : tl.reverse();
@@ -63,3 +75,18 @@ const submitBtn = document
     url.value = "";
     nazwa.value = "";
   });
+
+document.querySelector("#clearBTN").addEventListener("click", () => {
+  const opis = document.querySelector("#opis");
+  const skladniki = document.querySelector("#skladniki");
+  const url = document.querySelector("#url");
+  const nazwa = document.querySelector("#nazwa");
+  document.querySelector("#error-nazwa").innerHTML = "";
+  document.querySelector("#error-opis").innerHTML = "";
+  document.querySelector("#error-skladniki").innerHTML = "";
+  document.querySelector("#error-url").innerHTML = "";
+  opis.value = "";
+  skladniki.value = "";
+  url.value = "";
+  nazwa.value = "";
+});
