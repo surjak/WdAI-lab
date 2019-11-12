@@ -2,6 +2,8 @@ const btn = document.querySelector("#addRecipe");
 const recipes = document.querySelector(".recipes");
 let listofRecipes = document.querySelectorAll(".grid-item");
 function addRecipe(nazwa, opis, skladniki, url) {
+  let listOfIngredients = skladniki.split(",");
+  listOfIngredients = listOfIngredients.map(ing => ing.trim());
   let recipe = document.createElement("div");
   let readmore = document.createElement("div");
   readmore.classList.add("readmore");
@@ -23,11 +25,38 @@ function addRecipe(nazwa, opis, skladniki, url) {
   p.innerHTML = opis;
   div.appendChild(h3);
   div.appendChild(p);
-  div.appendChild(btn);
   recipe.classList.add("grid-item");
   recipe.appendChild(readmore);
   recipe.appendChild(img);
   recipe.appendChild(div);
+  recipe.appendChild(btn);
+  const ingredients = document.createElement("div");
+  ingredients.classList.add("ingredients");
+  const h3Ing = document.createElement("h3");
+  h3Ing.innerHTML = "Ingredients:";
+  ingredients.appendChild(h3Ing);
+  const ul = document.createElement("ul");
+  listOfIngredients.forEach((ing, index) => {
+    const li = document.createElement("li");
+    li.innerHTML = ing;
+    if (index < 6) ul.appendChild(li);
+  });
+  ingredients.appendChild(ul);
+  recipe.appendChild(ingredients);
+
+  recipe.tl2 = new TimelineMax({ paused: true, reversed: true });
+  recipe.tl2
+    .fromTo(recipe.childNodes[1], 0.35, { x: 0 }, { x: "100%" })
+    .fromTo(recipe.childNodes[2], 0.35, { y: 0 }, { y: "-100%" })
+    .fromTo(recipe.childNodes[4], 0.35, { y: 0 }, { y: "-100%" }, "0.35");
+
+  recipe.addEventListener("click", () => {
+    listofRecipes.forEach(rec => {
+      if (rec != recipe) rec.tl2.reversed() ? null : rec.tl2.reverse();
+    });
+    recipe.tl2.reversed() ? recipe.tl2.play() : recipe.tl2.reverse();
+  });
+  listofRecipes = [...listofRecipes, recipe];
   recipes.appendChild(recipe);
 }
 
@@ -42,8 +71,9 @@ btn.addEventListener("click", () => {
 
 const listOfButtons = document.querySelectorAll(".btn-remove");
 listOfButtons.forEach(btn =>
-  btn.addEventListener("click", () => {
-    recipes.removeChild(btn.parentNode.parentNode);
+  btn.addEventListener("click", e => {
+    e.stopPropagation();
+    recipes.removeChild(btn.parentNode);
   })
 );
 
@@ -57,6 +87,7 @@ const submitBtn = document
     const opis = document.querySelector("#opis");
 
     const skladniki = document.querySelector("#skladniki");
+
     const url = document.querySelector("#url");
     const nazwa = document.querySelector("#nazwa");
     document.querySelector("#error-nazwa").innerHTML = nazwa.validationMessage;
@@ -89,4 +120,19 @@ document.querySelector("#clearBTN").addEventListener("click", () => {
   skladniki.value = "";
   url.value = "";
   nazwa.value = "";
+});
+
+listofRecipes.forEach(recipe => {
+  recipe.tl2 = new TimelineMax({ paused: true, reversed: true });
+  recipe.tl2
+    .fromTo(recipe.childNodes[3], 0.35, { x: 0 }, { x: "100%" })
+    .fromTo(recipe.childNodes[5], 0.35, { y: 0 }, { y: "-100%" })
+    .fromTo(recipe.childNodes[9], 0.35, { y: 0 }, { y: "-100%" }, "0.35");
+  recipe.addEventListener("click", () => {
+    console.log(recipe.childNodes);
+    listofRecipes.forEach(rec => {
+      if (rec != recipe) rec.tl2.reversed() ? null : rec.tl2.reverse();
+    });
+    recipe.tl2.reversed() ? recipe.tl2.play() : recipe.tl2.reverse();
+  });
 });

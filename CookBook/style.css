@@ -185,6 +185,7 @@ main {
   position: relative;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.25s ease-in-out;
 }
 .grid-item img {
   width: 100%;
@@ -216,10 +217,13 @@ main {
 
   font-size: 40px;
 }
-
-.grid-item:hover .readmore {
-  display: block;
+.grid-item:hover {
+  transform: scale(1.02);
 }
+
+/* .grid-item:hover .readmore {
+  display: block;
+} */
 .btn-remove {
   border: none;
   background: transparent;
@@ -364,6 +368,12 @@ textarea:focus,
 button:focus {
   outline: none;
 }
+
+.ingredients ul li {
+  list-style: decimal;
+  margin-left: 10%;
+}
+
 @media (max-width: 1300px) {
   .header-content h3 {
     padding: 4% 0 2% 0;
