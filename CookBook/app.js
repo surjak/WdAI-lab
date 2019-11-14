@@ -4,6 +4,7 @@ let listofRecipes = document.querySelectorAll(".grid-item");
 function addRecipe(nazwa, opis, skladniki, url) {
   let listOfIngredients = skladniki.split(",");
   listOfIngredients = listOfIngredients.map(ing => ing.trim());
+
   let recipe = document.createElement("div");
   let readmore = document.createElement("div");
   readmore.classList.add("readmore");
@@ -13,7 +14,8 @@ function addRecipe(nazwa, opis, skladniki, url) {
   let btn = document.createElement("button");
   btn.classList.add("btn-remove");
   btn.innerHTML = "X";
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", e => {
+    e.stopPropagation();
     recipes.removeChild(recipe);
   });
   let img = document.createElement("img");
