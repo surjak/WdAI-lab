@@ -72,9 +72,11 @@ a {
   top: 50%;
   right: 0;
   z-index: 3;
+  transform: translateX(50%);
 }
 #addRecipe:hover {
   background: rgba(175, 169, 169, 0.993);
+  transform: translateX(0);
 }
 .header-content {
   position: absolute;
@@ -412,11 +414,17 @@ button:focus {
   }
 }
 @media (max-width: 950px) {
+  main {
+    padding-top: 4%;
+  }
+  header {
+    height: 60vh;
+  }
   .hidden-menu {
     display: block;
     width: 90%;
     margin: auto;
-    padding: 0 0 6% 0;
+    padding: 0 0 3% 0;
   }
   .hidden-menu ul {
     display: flex;
@@ -491,9 +499,25 @@ button:focus {
   .grid-item {
     margin-top: 5%;
   }
+
+  .formularz h1 {
+    font-size: 1.5rem;
+  }
+  .formularz {
+    width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
+  .formularz input {
+    padding: 5px;
+    font-size: 14px;
+  }
+  .formularz textarea {
+    padding: 8px;
+    font-size: 14px;
+  }
+
   header {
     height: 60vh;
   }
