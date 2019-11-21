@@ -61,6 +61,9 @@ nav {
 .navbar-dark .navbar-nav .active > .nav-link {
   color: rgb(114, 172, 145);
 }
+.active {
+  color: rgb(114, 172, 145) !important;
+}
 
 @media (min-width: 768px) {
   .bg-dark {
